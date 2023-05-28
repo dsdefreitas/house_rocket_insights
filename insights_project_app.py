@@ -84,6 +84,28 @@ def suggested_map(data):
 
     return None
 
+def view_financial_results_and_map(purchase_table): 
+        
+    number = len(purchase_table.index)
+    sp_sum = purchase_table['price'].sum()
+    profit_sum = purchase_table['profit'].sum()
+
+    results_table = {'Number of Properties': number, 'Total Investiment (U$)': sp_sum, 'Total Profit (U$)': profit_sum}
+
+    results_table = pd.DataFrame(results_table, index=[''])
+
+    st.dataframe(purchase_table)
+    st.title('Financial Result Table')
+    st.dataframe(results_table)
+
+    st.title('Map of suggested properties')
+
+    grouped_map = purchase_table[['id', 'price', 'lat', 'long']]
+
+    suggested_map(grouped_map)
+
+    return None 
+
 def introduction():
 
     if selected == 'Introduction':
@@ -106,7 +128,7 @@ def introduction():
 
         st.write('A table of suggestions that selects properties in excellent condition and prices lower than the average prices of their respective regions. 10 business hypotheses were evaluated to generate insights, presented in the "insights" tab. You can narrow down table suggestions from filters based on these insights. Furthermore, a competitive sale price for the market is suggested and capable of generating a considerable profit, in addition to the best season of the year to sell the property purchased. A map is also displayed to identify the location of properties suggested by the id, which changes along with the filters.')
         st.write('')
-        st.write('It is also presented the profit and the total investment of the suggestions that varies according to the chosen filters. The investment ranges from 1,498,319,634 to 12,420,300 dollars; and the profit obtained from 3,151,700 to 318,666,728.20 dollars.')
+        st.write('It is also presented the profit and the total investment of the suggestions that varies according to the chosen filters. The maximum number of properties to be recommended is 3775, the maximum investment is U\$1,483,480,263 and the maximum profit earned is U\$315,284,211.')
 
 def insights(data):
 
@@ -402,85 +424,23 @@ def results(data):
 
             purchase_table1 = purchase_table[purchase_table['bedrooms'] <= insight3]
 
-            number = len(purchase_table1.index)
-            sp_sum = purchase_table1['price'].sum()
-            profit_sum = purchase_table1['profit'].sum()
-
-            results_table = {'Number of Properties': number, 'Total Investiment (U$)': sp_sum, 'Total Profit (U$)': profit_sum}
-
-            results_table = pd.DataFrame(results_table, index=[''])
-
-            st.dataframe(purchase_table1)
-            st.subheader('Financial Result Table')
-            st.dataframe(results_table)
-
-            st.title('Map of suggested properties')
-
-            grouped_map = purchase_table1[['id', 'price', 'lat', 'long']]
-
-            suggested_map(grouped_map)
+            view_financial_results_and_map(purchase_table1)
 
         elif insight1 == True and insight2 == False:
 
             purchase_table2 = purchase_table[(purchase_table['bedrooms'] <= insight3) & (purchase_table['renovated'] == 'no')]
 
-            number = len(purchase_table2.index)
-            sp_sum = purchase_table2['price'].sum()
-            profit_sum = purchase_table2['profit'].sum()
-
-            results_table = {'Number of Properties': number, 'Total Investiment (U$)': sp_sum,
-                             'Total Profit (U$)': profit_sum}
-
-            results_table = pd.DataFrame(results_table, index=None)
-
-            st.dataframe(purchase_table2)
-            st.subheader('Financial Result Table')
-            st.dataframe(results_table)
-
-            grouped_map = purchase_table2[['id', 'price', 'lat', 'long']]
-
-            suggested_map(grouped_map)
+            view_financial_results_and_map(purchase_table2)
 
         elif insight1 == False and insight2 == True:
             purchase_table3 = purchase_table[(purchase_table['bedrooms'] <= insight3) & (purchase_table['waterfront'] == 'no')]
 
-            number = len(purchase_table3.index)
-            sp_sum = purchase_table3['price'].sum()
-            profit_sum = purchase_table3['profit'].sum()
-
-            results_table = {'Number of Properties': number, 'Total Investiment (U$)': sp_sum,
-                             'Total Profit (U$)': profit_sum}
-
-            results_table = pd.DataFrame(results_table, index=[''])
-
-            st.dataframe(purchase_table3)
-            st.subheader('Financial Result Table')
-            st.dataframe(results_table)
-
-            grouped_map = purchase_table3[['id', 'price', 'lat', 'long']]
-
-            suggested_map(grouped_map)
+            view_financial_results_and_map(purchase_table3)
 
         elif insight1 == True and insight2 == True:
             purchase_table4 = purchase_table[(purchase_table['bedrooms'] <= insight3) & (purchase_table['waterfront'] == 'no') & (purchase_table['renovated'] == 'no')]
 
-            number = len(purchase_table4.index)
-            sp_sum = purchase_table4['price'].sum()
-            profit_sum = purchase_table4['profit'].sum()
-
-            results_table = {'Number of Properties': number, 'Total Investiment (U$)': sp_sum,
-                             'Total Profit (U$)': profit_sum}
-
-            results_table = pd.DataFrame(results_table, index=[''])
-
-
-            st.dataframe(purchase_table4)
-            st.subheader('Financial Result Table')
-            st.dataframe(results_table)
-
-            grouped_map = purchase_table4[['id', 'price', 'lat', 'long']]
-
-            suggested_map(grouped_map)
+            view_financial_results_and_map(purchase_table4)
 
 
 if __name__ == '__main__':

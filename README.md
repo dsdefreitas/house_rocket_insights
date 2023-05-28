@@ -4,7 +4,7 @@
 
 ![image](image/logo.jpg)
 
-*A base de dados foi coletada do Kaggle. Ainda que a empresa e a base de dados seja real, a empresa e o problema de negócio são fictícios.*  
+*A base de dados foi coletada do Kaggle. Ainda que a base de dados seja real, a empresa e o problema de negócio são fictícios.*  
  [Clique aqui para ter acesso à base de dados original do Kaggle](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction) 
 
 
@@ -93,7 +93,9 @@ Foram adicionados então, filtros de insights criados com a biblioteca streamlit
 
 ### Acesso ao Produto de Dados 
 
-Clique aqui para ter acesso ao aplicativo 
+ [Clique aqui para ter acesso ao aplicativo](https://dsdefreitas-house-rocket-insights-insights-project-app-nrslnt.streamlit.app/)  
+
+ --------------------------
 
 ### Resultados Financeiros
 
@@ -105,6 +107,6 @@ Os resultados irão variar de acordo com os filtros de insights escolhidos. Fora
 
 O aplicativo conseguiu atender aos anseios do modelo de negócios da empresa, selecionando imóveis ideais para compra e revenda. Como próximos passos, pretende-se tornar a aplicação mais veloz, com funcionalidades mais abrangentes, e implentar modelos de machine learning para uma previsão mais assertiva.
 
---------------------------
+
 
 
