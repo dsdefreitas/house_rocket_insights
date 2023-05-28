@@ -1,6 +1,6 @@
-## Projeto de Insights 
+## Solução de Negócios para Empresa Imobiliária
 
-### Solução de Negócios para Empresa Imobiliária - Empresa House Rocket.  
+### Projeto de Insights 
 
 ![image](image/logo.jpg)
 
@@ -38,7 +38,7 @@ O objetivo deste projeto é ajudar o CEO a decidir quais são as melhores casas 
 |condition                        |	Índice de 1 a 5 na condição (usado) do imóvel. 1 é a pior condição e 5 é a melhor |
 |grade                            |	Índice de 1 a 13 na condição de construção e projeto do imóvel. 1 é a pior nota e 13 é a melhor nota |
 |sqft_above                       |	Metragem quadrada (em pés) do espaço interior do imóvel acima do nível do solo|
-|sqft_basement                    |	Metragem quadrada (em pés) do espaço interno da propriedade abaixo do nível do solo (porão).|
+|sqft_basement                    |	Metragem quadrada (em pés) do espaço interno da propriedade abaixo do nível do solo (porão)|
 |yr_built 	                      | Ano em que o imóvel foi construído|
 |yr_renovated 	                  | Ano da última reforma do imóvel|
 |zipcode                          |	Código postal da propriedade|
@@ -69,7 +69,7 @@ Estas últimas medianas foram utilizadas como parâmetro para definir o preço d
 
 Foi calculado o lucro de cada imóvel, que consiste na diferença entre o preço do imóvel e o preço sugerido de venda. Os dados foram plotados em uma tabela.
 
-Foram adicionados então, filtros de insights criados com a biblioteca streamlit, uma tabela de resultados financeiros que consiste na soma das linhas (número de propriedades), soma do preço da propriedade (investimento total) e soma dos lucros individuais (lucro total) da tabela de sugestões filtradas. A biblioteca Folium foi utilizada para criar o mapa das propriedades sugeridas. A biblioteca streamlit também foi utilizada para fazer o design do aplicativo que foi hospedado no streamlit cloud e pode ser acessado em qualquer dispositivo com internet. 
+Foram adicionados então, filtros de insights criados com a biblioteca streamlit, uma tabela de resultados financeiros que consiste na soma das linhas (número de propriedades), soma do preço da propriedade (investimento total) e soma dos lucros individuais (lucro total) da tabela de sugestões filtradas. A biblioteca Folium foi utilizada para criar o mapa das propriedades sugeridas. A biblioteca streamlit também foi utilizada para fazer o design do aplicativo que foi hospedado na streamlit cloud e pode ser acessado em qualquer dispositivo com internet. 
 
 --------------------------
 
@@ -99,7 +99,7 @@ Foram adicionados então, filtros de insights criados com a biblioteca streamlit
 
 ### Resultados Financeiros
 
-Os resultados irão variar de acordo com os filtros de insights escolhidos. Foram recomendadas de **43** a **3775** propriedades. O investimento varia de **US\$12,053,350** a **US\$ 1,483,480,263**; e o lucro obtido de **U\$3,041,615** para **U\$315,284,211.**
+Os resultados irão variar de acordo com os filtros de insights escolhidos. O número máximo de propriedades a serem recomendadas é **3775**, o máximo investimento é de **U\$ 1,483,480,263** e o máximo lucro obtido é **U\$ 315,284,211**.
  
 --------------------------
 
